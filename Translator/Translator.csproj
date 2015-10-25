@@ -139,6 +139,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Pictures\apple.jpg" />
+    <Content Include="Pictures\arrow.jpg" />
+    <Content Include="Pictures\bamboo.jpg" />
+    <Content Include="Pictures\banan.jpg" />
+    <Content Include="Pictures\bomb.jpg" />
+    <Content Include="Pictures\cream.jpg" />
     <Content Include="Pictures\elephant.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -174,6 +180,7 @@
     <Content Include="Views\Simple\Index.cshtml" />
     <Content Include="Views\Shared\TranslationsListPartial.cshtml" />
     <Content Include="Views\Usual\Index.cshtml" />
+    <Content Include="Views\Usual\GetWord.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

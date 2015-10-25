@@ -1,34 +1,65 @@
-﻿@model IEnumerable<Translator.Models.Translation>
-
+﻿
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
+<div>
+    @using (Ajax.BeginForm("GetWord", new AjaxOptions { UpdateTargetId = "Up" }))
+    {
+
 
 <p>
- <label id="Label1">Английский</label> @Html.ActionLink("Сменить язык", "Create") <label id="Label1">Русский</label>
+    <input type="hidden" value="Английский"id="Lab" name="Lab" >
+    <label id="Label1" name="Label1" style="font:bold 14px verdana; width:200px">Английский</label><button style="height:50px;width:250px;" id="btn">
+        <img src="~/Pictures/arrow.jpg" alt="Сменить язык"
+             style="vertical-align: middle; height:40px;width:100px;font:bold 16px verdana;">Сменить язык
+    </button><label id="Label2" style="padding:0% 0% 0% 4%;font:bold 16px verdan; width:350px;left:550px;top:125px;position:absolute">Русский</label>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.EnglishWord)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RussianWord)
-        </th>
-        <th></th>
-    </tr>
-    
-@foreach (var item in Model) {
-    <tr>
-        <td>
-          @item.EnglishWord.Word
-        </td>
-       <td>
-           @item.RussianWord.Word
-           </td>
-    </tr>
-}
+    <input type="submit" id="sub" style="visibility:hidden">
 
-</table>
+<div>
+
+    Введите ваше слово:<input type="text" id="text" name="text">
+
+
+    <div id="Up">
+        Перевод:<input type="text" id="translate" name="translate">
+    </div>
+</div>}
+
+</div>
+@Scripts.Render("~/scripts/jquery-1.10.2.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
+<script>
+    document.getElementById("btn").onclick = function (e) {
+        var temp = document.getElementById("text").value;
+        var temp1 = document.getElementById("translate").value;
+        document.getElementById("text").value = temp1;
+        document.getElementById("translate").value = temp;
+        if (document.getElementById("Label1").textContent == "Английский") {
+            document.getElementById("Lab").value = "Русский";
+            document.getElementById("Label1").textContent = "Русский";
+            document.getElementById("Label2").textContent = "Английский";
+         
+
+
+        }
+        else {
+            document.getElementById("Lab").value = "Английский";
+            document.getElementById("Label1").textContent = "Английский";
+            document.getElementById("Label2").textContent = "Русский   ";
+      
+            
+        }
+
+
+    }
+    document.getElementById("sub").onclick = function (e) {
+    }
+    document.getElementById("text").oninput = function (e) {
+    
+        document.getElementById("sub").click();
+       
+    }
+</script>
