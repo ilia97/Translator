@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Translator.Models.Translation>
+
+
+<table class="table">
+    <tr>
+        <th>
+            <p style="width:220px"> Русский</p>
+        </th>
+
+        <th>
+            <p style="width:200px">Английский</p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+           <label >@item.RussianWord.Word</label>
+        </td>
+        <td>
+            <label >@item.EnglishWord.Word</label>
+        </td>
+    </tr>
+}
+
+</table>

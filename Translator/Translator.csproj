@@ -119,6 +119,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LastController.cs" />
     <Compile Include="Controllers\SimpleController.cs" />
     <Compile Include="Controllers\UsualController.cs" />
     <Compile Include="Global.asax.cs">
@@ -181,6 +182,9 @@
     <Content Include="Views\Shared\TranslationsListPartial.cshtml" />
     <Content Include="Views\Usual\Index.cshtml" />
     <Content Include="Views\Usual\GetWord.cshtml" />
+    <Content Include="Views\Last\Index.cshtml" />
+    <Content Include="Views\Last\GetWords.cshtml" />
+    <Content Include="Views\Last\GetWo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

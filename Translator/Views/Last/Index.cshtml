@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    @using (Ajax.BeginForm("GetWords", new AjaxOptions { UpdateTargetId = "Up" }))
+    {
+
+
+        <p>
+            <input type="hidden" value="Английский" id="lang" name="lang">
+            <label id="Label1" name="Label1" style="font:bold 14px verdana; width:200px">Английский</label><button style="height:50px;width:250px;" id="btn">
+                <img src="~/Pictures/arrow.jpg" alt="Сменить язык"
+                     style="vertical-align: middle; height:40px;width:100px;font:bold 16px verdana;">Сменить язык
+            </button><label id="Label2" style="padding:0% 0% 0% 4%;font:bold 16px verdan; width:350px;left:550px;top:125px;position:absolute">Русский</label>
+        </p>
+        <input type="submit" id="sub" style="visibility:hidden">
+        
+       <p>Введите ваше слово<input type="text" name="text" id="text"></p>
+
+        <div id="Up">
+        </div>
+    }
+
+</div>
+@Scripts.Render("~/scripts/jquery-1.10.2.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
+<script>
+    window.onload = function () {
+        document.getElementById("sub").click();
+    }
+    document.getElementById("btn").onclick = function (e) {
+
+        var t = "";
+        
+        document.getElementById("text").value = t;
+        if (document.getElementById("Label1").textContent == "Английский") {
+
+            document.getElementById("lang").value = "Русский";
+
+            document.getElementById("Label1").textContent = "Русский";
+
+            document.getElementById("Label2").textContent = "Английский";
+
+
+
+        }
+        else {
+            document.getElementById("lang").value = "Английский";
+            document.getElementById("Label1").textContent = "Английский";
+            document.getElementById("Label2").textContent = "Русский   ";
+
+
+        }
+
+
+    }
+    document.getElementById("sub").onclick = function (e) {
+    }
+    document.getElementById("text").oninput = function (e) {
+
+        document.getElementById("sub").click();
+
+    }
+</script>
