@@ -1,0 +1,34 @@
+﻿@using Translator.Models
+@{
+    List<Translation> englishTranslations = ViewBag.EnglishTranslations;
+    List<Translation> russianTranslations = ViewBag.RussianTranslations;
+}
+
+@if(englishTranslations.Count > 0)
+{
+    <table class="table">
+        @for (int i = 0; i < englishTranslations.Count; i++ )
+        {
+            <tr>
+                <td>@(i+1). @englishTranslations[i].EnglishWord.Word</td>
+                <td>@englishTranslations[i].EnglishWord.Transcription</td>
+            </tr>
+        }
+    </table>
+}
+else if (russianTranslations.Count > 0)
+{
+    <table class="table">
+        @for (int i = 0; i < russianTranslations.Count; i++)
+        {
+            <tr>
+                <td>@(i + 1). @russianTranslations[i].RussianWord.Word</td>
+                <td>@russianTranslations[i].RussianWord.Transcription</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h3>К сожалению,такого слова нет словаре. Проверьте правильность написания слова.</h3>
+}
