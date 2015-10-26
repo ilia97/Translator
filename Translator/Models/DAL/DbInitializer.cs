@@ -26,12 +26,12 @@ namespace Translator.Models.DAL
             db.RussianWords.Add(new RussianWord { Id = 5, Word = "бомба", Transcription = "[бо́мба]" });
             db.RussianWords.Add(new RussianWord { Id = 6, Word = "крем", Transcription = "[кр'е́м]" });
 
-            db.Translations.Add(new Translation { EnglishWordId = 1, RussianWordId = 1, Picture = "~/Pictures/elephant.jpg" });
-            db.Translations.Add(new Translation { EnglishWordId = 2, RussianWordId = 2, Picture = "~/Pictures/apple.jpg" });
-            db.Translations.Add(new Translation { EnglishWordId = 3, RussianWordId = 3, Picture = "~/Pictures/banana.jpg" });
-            db.Translations.Add(new Translation { EnglishWordId = 4, RussianWordId = 4, Picture = "~/Pictures/bamboo.jpg" });
-            db.Translations.Add(new Translation { EnglishWordId = 5, RussianWordId = 5, Picture = "~/Pictures/bomb.jpg" });
-            db.Translations.Add(new Translation { EnglishWordId = 6, RussianWordId = 6, Picture = "~/Pictures/cream.jpg" });
+            db.Translations.Add(new Translation { EnglishWordId = 1, RussianWordId = 1, Picture = "elephant.jpg" });
+            db.Translations.Add(new Translation { EnglishWordId = 2, RussianWordId = 2, Picture = "apple.jpg" });
+            db.Translations.Add(new Translation { EnglishWordId = 3, RussianWordId = 3, Picture = "banan.jpg" });
+            db.Translations.Add(new Translation { EnglishWordId = 4, RussianWordId = 4, Picture = "bamboo.jpg" });
+            db.Translations.Add(new Translation { EnglishWordId = 5, RussianWordId = 5, Picture = "bomb.jpg" });
+            db.Translations.Add(new Translation { EnglishWordId = 6, RussianWordId = 6, Picture = "cream.jpg" });
 
             base.Seed(db);
         }

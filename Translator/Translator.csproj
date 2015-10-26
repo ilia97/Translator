@@ -118,6 +118,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ChildrenController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LastController.cs" />
     <Compile Include="Controllers\SimpleController.cs" />
@@ -150,6 +151,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Custom\WordList.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -185,6 +187,8 @@
     <Content Include="Views\Last\Index.cshtml" />
     <Content Include="Views\Last\GetWords.cshtml" />
     <Content Include="Views\Last\GetWo.cshtml" />
+    <Content Include="Views\Shared\ChildrenTranslationsListPartial.cshtml" />
+    <Content Include="Views\Children\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,6 +1,6 @@
 ﻿@using Translator.Models
 @{
-    ViewBag.Title = "Simple Translator";
+    ViewBag.Title = "Translator For Children";
 
     List<RussianWord> russianWords = ViewBag.RussianWords;
     List<EnglishWord> englishWords = ViewBag.EnglishWords;
@@ -15,9 +15,9 @@
     <input type="hidden" id="@i englishWord" value="@englishWords[i].Word" />
 }
 
-<h2>Simple Translator</h2>
+<h2>Translator For Children</h2>
 
-@using (Ajax.BeginForm("GetTranslations", "Simple", new AjaxOptions { UpdateTargetId = "translations" }))
+@using (Ajax.BeginForm("GetTranslations", "Children", new AjaxOptions { UpdateTargetId = "translations" }))
 {
     <table>
         <tr>
@@ -28,7 +28,7 @@
             </td>
             <td>
                 <button name="submit" id="submit" class="btn btn-default">
-                    <span class="glyphicon glyphicon-search"></span>
+                    Поиск
                 </button>
             </td>
         </tr>
