@@ -1,8 +1,8 @@
 ﻿@{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Словарь";
 }
 
-<h2>Index</h2>
+<h2>Словарь</h2>
 
 <div>
     @using (Ajax.BeginForm("GetWords", new AjaxOptions { UpdateTargetId = "Up" }))
@@ -18,15 +18,14 @@
 
 
 
-            <table>
+            <table class="table-responsive">
                 <tr>
                     <td>
                         @Html.DropDownList("Lab", list, new { @class = "form-control" })
                     </td>
                     <td>
-                        <button style="height:50px;width:250px;" id="btn">
-                            <img src="~/Pictures/arrow.jpg" alt="Сменить язык"
-                                 style="vertical-align: middle; height:40px;width:100px;font:bold 16px verdana;">Сменить язык
+                        <button class="btn btn-default" id="btn">
+                            <span class="glyphicon glyphicon-resize-horizontal"></span>
                         </button>
                     </td>
                     <td>
@@ -35,7 +34,8 @@
                 </tr>
                 <tr>
                     <td>
-                        Введите слово:<input type="text" id="text" name="text">
+                        <br />
+                        Введите слово:<input autocomplete="off" class="form-control" type="text" id="text" name="text">
                     </td>
 
                     <td></td>

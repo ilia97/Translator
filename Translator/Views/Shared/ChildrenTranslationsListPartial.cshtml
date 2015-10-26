@@ -10,9 +10,9 @@
         @for (int i = 0; i < englishTranslations.Count; i++)
         {
             <tr>
-                <td><h3>@englishTranslations[i].RussianWord.Word</h3></td>
-            </tr>
-            <tr>
+                <td>
+                    <h3>@englishTranslations[i].RussianWord.Word</h3>
+                </td>
                 <td>
                     <img src="~/Pictures/@englishTranslations[i].Picture">
                 </td>
@@ -26,9 +26,9 @@ else if (russianTranslations.Count > 0)
         @for (int i = 0; i < russianTranslations.Count; i++)
         {
             <tr>
-                <td><h3>@russianTranslations[i].RussianWord.Word</h3></td>
-            </tr>
-            <tr>
+                <td>
+                    <h3>@russianTranslations[i].RussianWord.Word</h3>
+                </td>
                 <td>
                     <img src="~/Pictures/@russianTranslations[i].Picture">
                 </td>

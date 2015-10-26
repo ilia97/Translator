@@ -1,6 +1,6 @@
 ﻿@using Translator.Models
 @{
-    ViewBag.Title = "Simple Translator";
+    ViewBag.Title = "Упрощённый переводчик";
 
     List<RussianWord> russianWords = ViewBag.RussianWords;
     List<EnglishWord> englishWords = ViewBag.EnglishWords;
@@ -15,15 +15,15 @@
     <input type="hidden" id="@i englishWord" value="@englishWords[i].Word" />
 }
 
-<h2>Simple Translator</h2>
+<h2>Упрощённый переводчик</h2>
 
 @using (Ajax.BeginForm("GetTranslations", "Simple", new AjaxOptions { UpdateTargetId = "translations" }))
 {
-    <table>
+    <table class="table-responsive">
         <tr>
             <td>
                 <div class="dropdown" id="list">
-                    <input data-toggle="dropdown" class="form-control" name="word" id="word" />
+                    <input autocomplete="off" data-toggle="dropdown" class="form-control" name="word" id="word" />
                 </div>
             </td>
             <td>
