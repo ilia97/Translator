@@ -20,33 +20,33 @@
 
 
             }
-        <table>
-            <tr>
-                <td>
-                @Html.DropDownList("Lab", list, new { @class = "form-control" })
+            <table>
+                <tr>
+                    <td>
+                        @Html.DropDownList("Lab", list, new { @class = "form-control" })
                     </td>
-               
-                <td>
-                @Html.DropDownList("Lab1", list1, new { @class = "form-control" })
+
+                    <td>
+                        @Html.DropDownList("Lab1", list1, new { @class = "form-control" })
                     </td>
-            </tr>
-            <tr>
-                <td>
-                    Введите слово:<input type="text" id="text" name="text">
-                </td>
+                </tr>
+                <tr>
+                    <td>
+                        Введите слово:<input type="text" id="text" name="text">
+                    </td>
 
-                <td>
+                    <td>
 
-                    <div id="Up">
+                        <div id="Up">
 
 
-                        Перевод:<input type="text" id="translate" name="translate">
-                    </div>
-                </td>
-            </tr>
+                            Перевод: <input type="text" id="translate" name="translate">
+                        </div>
+                    </td>
+                </tr>
             </table>
         </p>
-                <input type="submit" id="sub" style="visibility:hidden">
+        <input type="submit" id="sub" style="visibility:hidden">
 
                 <div>
 
@@ -66,9 +66,23 @@
 
     }
     document.getElementById("Lab").onchange = function (e) {
+
+        if (document.getElementById("Lab").value == "Английский") {
+            document.getElementById("Lab1").value = "Русский";
+        }
+        else {
+            document.getElementById("Lab1").value = "Английский";
+        }
+
         document.getElementById("sub").click();
     }
     document.getElementById("Lab1").onchange = function (e) {
-        document.getElementById("sub").click();
+
+        if (document.getElementById("Lab1").value == "Английский") {
+            document.getElementById("Lab").value = "Русский";
+        }
+        else {
+            document.getElementById("Lab").value = "Английский";
+        }
     }
 </script>

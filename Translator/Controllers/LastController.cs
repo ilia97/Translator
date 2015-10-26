@@ -17,7 +17,8 @@ namespace Translator.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult GetWords(string text, string lang) {
+        public ActionResult GetWords(string text, string lang)
+        {
             text = text.ToLower();
             List<Translation> l = new List<Translation>();
             if (lang == "Английский")
@@ -47,9 +48,11 @@ namespace Translator.Controllers
                         }
                     }
                 }
+                l = l.OrderBy(x => x.EnglishWord.Word).ToList();
                 return PartialView(l);
             }
-            else {
+            else
+            {
                 if (text == "")
                 {
                     foreach (var x in db.Translations)
@@ -70,15 +73,15 @@ namespace Translator.Controllers
                                     break;
                                 }
                             }
-                            if(z!=-1)
+                            if (z != -1)
                                 l.Add(x);
                         }
                     }
                 }
-                
-                return PartialView("GetWo",l);
+                l = l.OrderBy(x => x.RussianWord.Word).ToList();
+                return PartialView("GetWo", l);
             }
-            
-            }
+
         }
     }
+}

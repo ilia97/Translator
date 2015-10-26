@@ -8,7 +8,7 @@ using Translator.Models.DAL;
 
 namespace Translator.Controllers
 {
- 
+
     public class UsualController : Controller
     {
         TranslatorContext db = new TranslatorContext();
@@ -18,11 +18,12 @@ namespace Translator.Controllers
             return View(db.Translations.ToList());
         }
         [HttpPost]
-        public ActionResult GetWord(string Lab, string text, string Lab1) {
+        public ActionResult GetWord(string Lab, string text, string Lab1)
+        {
             text = text.ToLower();
             LanguageWord l = new LanguageWord();
-            if(Lab==Lab1)
-                return PartialView(l.Word=text);
+            if (Lab == Lab1)
+                return PartialView(l.Word = text);
             if (text == null)
             {
                 l.Id = 123;
@@ -34,11 +35,13 @@ namespace Translator.Controllers
                 {
                     l.Word = db.EnglishWords.Where(x => x.Word == text).First().RussianTranslations.First().RussianWord.Word;
                 }
-                else {
+                else
+                {
                     l.Word = text;
                 }
             }
-            else {
+            else
+            {
                 if (db.RussianWords.Where(x => x.Word == text).Count() != 0)
                 {
                     l.Word = db.RussianWords.Where(x => x.Word == text).First().EnglishTranslations.First().EnglishWord.Word;

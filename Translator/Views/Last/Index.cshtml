@@ -7,21 +7,46 @@
 <div>
     @using (Ajax.BeginForm("GetWords", new AjaxOptions { UpdateTargetId = "Up" }))
     {
+        {
+            List<SelectListItem> list = new List<SelectListItem>();
+
+            list.Add(new SelectListItem() { Text = "Английский" });
+            list.Add(new SelectListItem() { Text = "Русский" });
+            List<SelectListItem> list1 = new List<SelectListItem>();
+            list1.Add(new SelectListItem() { Text = "Русский" });
+            list1.Add(new SelectListItem() { Text = "Английский" });
 
 
-        <p>
-            <input type="hidden" value="Английский" id="lang" name="lang">
-            <label id="Label1" name="Label1" style="font:bold 14px verdana; width:200px">Английский</label><button style="height:50px;width:250px;" id="btn">
-                <img src="~/Pictures/arrow.jpg" alt="Сменить язык"
-                     style="vertical-align: middle; height:40px;width:100px;font:bold 16px verdana;">Сменить язык
-            </button><label id="Label2" style="padding:0% 0% 0% 4%;font:bold 16px verdan; width:350px;left:550px;top:125px;position:absolute">Русский</label>
-        </p>
-        <input type="submit" id="sub" style="visibility:hidden">
-        
-       <p>Введите ваше слово<input type="text" name="text" id="text"></p>
 
-        <div id="Up">
-        </div>
+            <table>
+                <tr>
+                    <td>
+                        @Html.DropDownList("Lab", list, new { @class = "form-control" })
+                    </td>
+                    <td>
+                        <button style="height:50px;width:250px;" id="btn">
+                            <img src="~/Pictures/arrow.jpg" alt="Сменить язык"
+                                 style="vertical-align: middle; height:40px;width:100px;font:bold 16px verdana;">Сменить язык
+                        </button>
+                    </td>
+                    <td>
+                        @Html.DropDownList("Lab1", list1, new { @class = "form-control" })
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Введите слово:<input type="text" id="text" name="text">
+                    </td>
+
+                    <td></td>
+                </tr>
+            </table>
+
+            <input type="submit" id="sub" style="visibility:hidden">
+            <input type="hidden" value="Английский" name="lang" id="lang">
+
+            <div id="Up">
+            </div>}
     }
 
 </div>
@@ -32,27 +57,19 @@
         document.getElementById("sub").click();
     }
     document.getElementById("btn").onclick = function (e) {
-
+        var l = document.getElementById("Lab").value;
+        var l2 = document.getElementById("Lab1").value;
+        document.getElementById("Lab").value = l2;
+        document.getElementById("Lab1").value = l;
         var t = "";
-        
+
         document.getElementById("text").value = t;
-        if (document.getElementById("Label1").textContent == "Английский") {
+        if (document.getElementById("Lab1").value == "Английский") {
 
             document.getElementById("lang").value = "Русский";
-
-            document.getElementById("Label1").textContent = "Русский";
-
-            document.getElementById("Label2").textContent = "Английский";
-
-
-
         }
         else {
             document.getElementById("lang").value = "Английский";
-            document.getElementById("Label1").textContent = "Английский";
-            document.getElementById("Label2").textContent = "Русский   ";
-
-
         }
 
 
@@ -64,4 +81,28 @@
         document.getElementById("sub").click();
 
     }
+
+
+    document.getElementById("Lab").onchange = function (e) {
+
+        if (document.getElementById("Lab").value == "Английский") {
+            document.getElementById("Lab1").value = "Русский";
+        }
+        else {
+            document.getElementById("Lab1").value = "Английский";
+        }
+
+        document.getElementById("sub").click();
+    }
+    document.getElementById("Lab1").onchange = function (e) {
+
+        if (document.getElementById("Lab1").value == "Английский") {
+            document.getElementById("Lab").value = "Русский";
+        }
+        else {
+            document.getElementById("Lab").value = "Английский";
+        }
+    }
+
+
 </script>
