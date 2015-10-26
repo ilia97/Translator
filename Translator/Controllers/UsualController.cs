@@ -18,9 +18,11 @@ namespace Translator.Controllers
             return View(db.Translations.ToList());
         }
         [HttpPost]
-        public ActionResult GetWord(string Lab, string text) {
+        public ActionResult GetWord(string Lab, string text, string Lab1) {
             text = text.ToLower();
             LanguageWord l = new LanguageWord();
+            if(Lab==Lab1)
+                return PartialView(l.Word=text);
             if (text == null)
             {
                 l.Id = 123;
