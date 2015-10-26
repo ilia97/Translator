@@ -74,8 +74,7 @@
 
 
     }
-    document.getElementById("sub").onclick = function (e) {
-    }
+
     document.getElementById("text").oninput = function (e) {
 
         document.getElementById("sub").click();
@@ -87,9 +86,13 @@
 
         if (document.getElementById("Lab").value == "Английский") {
             document.getElementById("Lab1").value = "Русский";
+
+            document.getElementById("lang").value = "Английский";
         }
         else {
             document.getElementById("Lab1").value = "Английский";
+
+            document.getElementById("lang").value = "Русский";
         }
 
         document.getElementById("sub").click();
@@ -98,10 +101,13 @@
 
         if (document.getElementById("Lab1").value == "Английский") {
             document.getElementById("Lab").value = "Русский";
+            document.getElementById("lang").value = "Русский"
         }
         else {
             document.getElementById("Lab").value = "Английский";
+            document.getElementById("lang").value = "Английский";
         }
+        document.getElementById("sub").click();
     }
 
 
