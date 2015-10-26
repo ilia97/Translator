@@ -1,26 +1,27 @@
 ﻿@model IEnumerable<Translator.Models.Translation>
 
 
-<table class="table">
+<table class="table-responsive" cellpadding="5">
     <tr>
-        <th>
-            <p style="width:220px"> Английский</p>
-        </th>
-        <th>
-            <p style="width:200px">Русский</p>
-        </th>
-        <th></th>
+        <td style="text-align:center">
+            <p> Английский</p>
+        </td>
+        <td></td>
+        <td style="text-align:center">
+            <p>Русский</p>
+        </td>
     </tr>
 
     @foreach (var item in Model)
     {
         <tr>
-            <td>
+            <td style="text-align:center">
                 <label>@item.EnglishWord.Word</label>
                 <label style="color:grey">@item.EnglishWord.Transcription</label>
             </td>
-            <td>
-                <label >@item.RussianWord.Word</label>
+            <td style="text-align:center">-</td>
+            <td style="text-align:center">
+                <label>@item.RussianWord.Word</label>
                 <label style="color:grey">@item.RussianWord.Transcription</label>
             </td>
         </tr>
